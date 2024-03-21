@@ -1,0 +1,72 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("c:/Users/Amireux/AppData/Roaming/.emacs.d/" . "lisp/")
+ ("c:/Users/Amireux/AppData/" . "Roaming/")
+ ("c:/Users/Amireux/" . "AppData/")
+ ("c:/Users/" . "Amireux/")
+ ("c:/" . "Users/")
+ ("c:/Users/Amireux/AppData/Roaming/" . ".emacs.d/")
+ ("d:/1_tools.file.works/9_CMD.Coding/" . "docments/")
+ ("d:/1_tools.file.works/" . "9_CMD.Coding/")
+ ("d:/" . "1_tools.file.works/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/Luna/.emacs.d/"
+ "c:/Users/Amireux/AppData/Roaming/.emacs.d/lisp/"
+ "d:/30_emacs.editor/projects/"
+ "c:/Users/Amireux/AppData/Roaming/.emacs.d/"
+ "d:/1_tools.file.works/9_CMD.Coding/"
+ "d:/1_tools.file.works/9_CMD.Coding/docments/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "load-plugins.el"
+ "init-ui.el"
+ "user-keymap.el"
+ "init-elpa.el"
+ "init-const.el"
+ "main.c"
+ "custom.el"
+ "main.i]"
+ "init-utils.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/Luna/.emacs.d/" (26108 19769 841872 295000) "custom.el" "elpa/" "recentf" "org-persist/" "lisp/" "init.el" "ido.last" "LICENSE" ".git/" "../" "./")
+
+ ("/home/Luna/" (26108 19730 24588 753000) ".emacs.d/" ".gitconfig" ".gtkrc-2.0" ".zcompdump.zwc" ".zcompdump.dat" ".zcompdump" ".zhistory" ".ut_storage/" "emacsfile/" "Downloads/" ".viminfo" "desktop/" "downloads/" ".factorio/" "steam/" ".pulse-cookie" ".steampid" ".steampath" ".steam/" ".ssh/" ".git-credentials" ".TabNine/" ".fonts/" ".fonts.conf" ".zcompcache/" ".zshrc" "code/" ".p10k.zsh" ".zimrc" ".zim/" ".zsh_profile" ".pki/" ".bashrc" ".bash_history" ".cache/" ".config/" ".local/" ".bash_profile" ".bash_logout" "../" "./")
+
+ ("c:/Users/Amireux/AppData/Roaming/.emacs.d/lisp/" (26108 16106 0 0) "user-keymap.el" "load-plugins.el" "init-utils.el" "init-ui.el" "init-elpa.el" "init-const.el" "../" "./")
+
+ ("c:/Users/Amireux/AppData/Roaming/.emacs.d/" (26108 16124 0 0) "recentf" "org-persist/" "lisp/" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "custom.el~" "custom.el" "auto-save-list/" ".init.el.~undo-tree~" ".git/" "../" "./")
+
+ ("c:/Users/Amireux/AppData/Roaming/.emacs.d/elpa/" (26108 14455 0 0) "undo-tree-0.8.2/" "smart-mode-line-20211005.233/" "rich-minority-20190419.1136/" "restart-emacs-20201127.1425/" "queue-0.2/" "gruvbox-theme-20230921.120/" "dashboard-20240319.915/" "dash-20240103.1301/" "benchmark-init-20240320.1342/" "autothemer-20230414.1419/" "archives/" "../" "./")
+
+ ("d:/30_emacs.editor/projects/" (26108 14697 0 0) "main2.c~" "main2.c" "main.exe" "main.c~" "main.cpp" "main.c" "fsdalkjflsa.cc" "exec.exe" "EmacsMini.cpp~" "EmacsMini.cpp" "clang-main.exe" "a.exe" "#main2.c#" "#main.cpp#" "#main.c#" "#fsdalkjflsa.cc#" "../" "./")
+
+ ("d:/1_tools.file.works/9_CMD.Coding/docments/" (26106 59970 0 0) "答辩.org~" "答辩.org" "Linux.org" "#main.org#" "../" "./")
+
+ ("c:/Users/Amireux/AppData/Roaming/" (26106 57996 0 0) "迅雷影音/" "幕布/" "{418C0070-7838-48BE-AF0A-485A052BBE44}" "xmp/" "XMind/" "Wmpvp/" "WeMod/" "VisualAssist/" "Visual Studio Setup/" "Valve Corporation/" "utForpc/" "Ubisoft/" "Typora/" "TPDownloadProxy/" "todo-list/" "thunder/" "Theta/" "The Creative Assembly/" "TenioDL/" "Tencent/" "TabNine/" "T2GP Launcher/" "Sun/" "Subversion/" "Skype/" "Siemens/" "Sekiro/" "Sega/" "RenPy/" "RapidCRC/" "quark-cloud-drive/" "QQ/" "QMLogEx/" "PLogs/" "pip/" "perfectworldarena/" "PCL/" "paradox-launcher-v2/" "Paradox Interactive/" "OpenMV/" "obsidian/" "NXP Semiconductors/" "NuGet/" "Netease/" "Mubu/" "MobaXterm/" "Microsoft/" "MathWorks/" "lunarvim/" "LeiGod/" "Lantern/" "KuGou8/" "kingsoft/" "JetBrains/" "Goldberg SteamEmu Saves/" "Godot/" "gnupg/" "GIMP/" "Geek Uninstaller/" "Foxit Software/" "Foxit AgentInformation/" "FnInformation/" "FLT/" "FlowLauncher/" "FLiNGTrainer/" "FiraxisLive/" "Factorio/" "Everything/" "EQATEC Analytics/" "EMPRESS/" "emp.bin" "Embarcadero/" "Electron/" "EldenRing/" "EasyAntiCheat/" "Durgod Zeus Engine/" "DingTalk/" "dinglive/" "Daum/" "DarkSoulsIII/" "cursed_blacksmith/" "CoreAVC.ini" "com.webqwe/" "com.mutangtech.qianji.win/" "com.adobe.dunamis/" "Codota/" "Code/" "clash_win/" "byteexec/" "Brotato/" "Blender Foundation/" "bilibili/" "BetopGame/" "BaiduYunKernel/" "BaiduYunGuanjia/" "baidu/" "Autodesk Installer/" "Autodesk/" "Altium2004/" "Altium/" "Adobe/" "ADBDriverInstaller/" "3dm_game_files/" "360zip/" "360AblumUI/" ".spacemacs.env" ".spacemacs" ".minecraft/" ".hmcl/" ".emacs.d/" ".1911/" "../" "./")
+
+ ("d:/1_tools.file.works/9_CMD.Coding/" (26106 58059 0 0) "main.s" "main.i" "main.c~" "main.cc" "main.c" "exec.exe" "docments/" "#main.org#" "../" "./")
+
+ ("c:/Users/Amireux/AppData/" (25527 55331 0 0) "Roaming/" "LocalLow/" "Local/" "../" "./")
+
+ ("c:/Users/Amireux/" (26103 62017 0 0) "新建文件夹/" "「开始」菜单/" "_vimrc" "_viminfo" "_emacs.el" "_.swp" "workspacer.State.json" "vimfiles/" "Videos/" "Templates/" "STMicroelectronics/" "STM32Cube/" "source/" "SendTo/" "Searches/" "scoop/" "SciTE.session" "SciTE.recent" "Saved Games/" "sanct.log" "Recent/" "PrintHood/" "Pictures/" "OneDrive/" "ntuser.ini" "NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000002.regtrans-ms" "NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000001.regtrans-ms" "NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TM.blf" "ntuser.dat.LOG2" "ntuser.dat.LOG1" "NTUSER.DAT" "NetHood/" "My Documents/" "Music/" "mumu_boot.txt" "Local Settings/" "Links/" "Intel/" "Favorites/" "Downloads/" "Documents/" "Desktop/" "Darcula.icls" "Cookies/" "Contacts/" "Application Data/" "AppData/" "Appd" "AMDRM_Install.log" "3D Objects/" ".wox/" ".workspacer/" ".vsnip/" ".vscode/" ".viminfo" ".thumbnails/" ".templateengine/" ".tabnine/" ".stmcufinder/" ".stmcube/" ".stm32cubemx/" ".p2/" ".openjfx/" ".nuget/" ".node_repl_history" ".NERDTreeBookmarks" ".MUMUVMM/" ".mume/" ".m2/" ".lesshst" ".ideavimrc" ".i18nupdatemod/" ".gradle/" ".gitconfig" ".eclipse/" ".DWords/" ".dotnet/" ".crossnote/" ".config/" ".codeium/" ".clang-format" ".cache/" ".bash_history" ".armlm/" ".android/" ".7d9b55297a162003a6d46e85fb151995daed6138" "#main.c#" "../" "./")
+
+ ("c:/Users/" (25527 61665 0 0) "Public/" "desktop.ini" "Default User/" "Default/" "Amireux/" "All Users/" "../" "./")
+
+ ("d:/1_tools.file.works/" (26072 42834 0 0) "ripgrep/" "GoodSyncShareFile/" "dwm/" "9_CMD.Coding/" "8_computer.tools/" "7_code.compiler/" "6_Microsoft.Terminal/" "5_linux.iso.file/" "4_xbox.text.tools/" "3_bilibili.download/" "2_programme.fonts/" "1_software.package/" "10_毕业设计/" "0_Doc-File/" "../" "./")
+
+ ("d:/30_emacs.editor/" (26039 54457 0 0) "Uninstall.exe" "TUTORIAL.CNNN~" "TUTORIAL.CNNN" "projects/" "emacs-29.1/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
