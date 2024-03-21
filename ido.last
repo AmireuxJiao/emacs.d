@@ -15,10 +15,7 @@
 
 ;; ----- ido-work-directory-list -----
 (
-<<<<<<< HEAD
  "/home/Luna/.emacs.d/"
-=======
->>>>>>> c1606d9fa660948f7c26004f5a88c02168781275
  "c:/Users/Amireux/AppData/Roaming/.emacs.d/lisp/"
  "d:/30_emacs.editor/projects/"
  "c:/Users/Amireux/AppData/Roaming/.emacs.d/"
@@ -28,20 +25,14 @@
 
 ;; ----- ido-work-file-list -----
 (
-<<<<<<< HEAD
  "init.el"
-=======
->>>>>>> c1606d9fa660948f7c26004f5a88c02168781275
  "load-plugins.el"
  "init-ui.el"
  "user-keymap.el"
  "init-elpa.el"
  "init-const.el"
  "main.c"
-<<<<<<< HEAD
-=======
  "init.el"
->>>>>>> c1606d9fa660948f7c26004f5a88c02168781275
  "custom.el"
  "main.i]"
  "init-utils.el"
@@ -49,13 +40,10 @@
 
 ;; ----- ido-dir-file-cache -----
 (
-<<<<<<< HEAD
  ("/home/Luna/.emacs.d/" (26108 19769 841872 295000) "custom.el" "elpa/" "recentf" "org-persist/" "lisp/" "init.el" "ido.last" "LICENSE" ".git/" "../" "./")
 
  ("/home/Luna/" (26108 19730 24588 753000) ".emacs.d/" ".gitconfig" ".gtkrc-2.0" ".zcompdump.zwc" ".zcompdump.dat" ".zcompdump" ".zhistory" ".ut_storage/" "emacsfile/" "Downloads/" ".viminfo" "desktop/" "downloads/" ".factorio/" "steam/" ".pulse-cookie" ".steampid" ".steampath" ".steam/" ".ssh/" ".git-credentials" ".TabNine/" ".fonts/" ".fonts.conf" ".zcompcache/" ".zshrc" "code/" ".p10k.zsh" ".zimrc" ".zim/" ".zsh_profile" ".pki/" ".bashrc" ".bash_history" ".cache/" ".config/" ".local/" ".bash_profile" ".bash_logout" "../" "./")
 
-=======
->>>>>>> c1606d9fa660948f7c26004f5a88c02168781275
  ("c:/Users/Amireux/AppData/Roaming/.emacs.d/lisp/" (26108 16106 0 0) "user-keymap.el" "load-plugins.el" "init-utils.el" "init-ui.el" "init-elpa.el" "init-const.el" "../" "./")
 
  ("c:/Users/Amireux/AppData/Roaming/.emacs.d/" (26108 16124 0 0) "recentf" "org-persist/" "lisp/" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "custom.el~" "custom.el" "auto-save-list/" ".init.el.~undo-tree~" ".git/" "../" "./")
