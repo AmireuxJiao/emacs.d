@@ -15,46 +15,44 @@
 
 ;; ----- ido-work-directory-list -----
 (
- "/home/Luna/.emacs.d/"
  "c:/Users/Amireux/AppData/Roaming/.emacs.d/lisp/"
- "d:/30_emacs.editor/projects/"
  "c:/Users/Amireux/AppData/Roaming/.emacs.d/"
+ "/home/Luna/.emacs.d/"
+ "d:/30_emacs.editor/projects/"
  "d:/1_tools.file.works/9_CMD.Coding/"
  "d:/1_tools.file.works/9_CMD.Coding/docments/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- "init.el"
  "load-plugins.el"
- "init-ui.el"
- "user-keymap.el"
- "init-elpa.el"
  "init-const.el"
- "main.c"
+ "init-elpa.el"
+ "init-ui.el"
  "init.el"
+ "user-keymap.el"
+ "main.c"
  "custom.el"
  "main.i]"
- "init-utils.el"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("c:/Users/Amireux/AppData/Roaming/.emacs.d/lisp/" (26109 20107 0 0) "user-keymap.el" "load-plugins.el" "init-utils.el" "init-ui.el" "init-elpa.el" "init-const.el" "../" "./")
+
+ ("c:/Users/Amireux/AppData/Roaming/.emacs.d/" (26109 20108 0 0) "recentf" "org-persist/" "lisp/" "LICENSE" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "custom.el~" "custom.el" "auto-save-list/" ".init.el.~undo-tree~" ".git/" "../" "./")
+
+ ("c:/Users/Amireux/AppData/Roaming/" (26108 19548 0 0) "迅雷影音/" "幕布/" "{418C0070-7838-48BE-AF0A-485A052BBE44}" "xmp/" "XMind/" "Wmpvp/" "WeMod/" "VisualAssist/" "Visual Studio Setup/" "Valve Corporation/" "utForpc/" "Ubisoft/" "Typora/" "TPDownloadProxy/" "todo-list/" "thunder/" "Theta/" "The Creative Assembly/" "TenioDL/" "Tencent/" "TabNine/" "T2GP Launcher/" "Sun/" "Subversion/" "Skype/" "Siemens/" "Sekiro/" "Sega/" "RenPy/" "RapidCRC/" "quark-cloud-drive/" "QQ/" "QMLogEx/" "PLogs/" "pip/" "perfectworldarena/" "PCL/" "paradox-launcher-v2/" "Paradox Interactive/" "OpenMV/" "obsidian/" "NXP Semiconductors/" "NuGet/" "Netease/" "Mubu/" "MobaXterm/" "Microsoft/" "MathWorks/" "lunarvim/" "LeiGod/" "Lantern/" "KuGou8/" "kingsoft/" "JetBrains/" "Goldberg SteamEmu Saves/" "Godot/" "gnupg/" "GIMP/" "Geek Uninstaller/" "Foxit Software/" "Foxit AgentInformation/" "FnInformation/" "FLT/" "FlowLauncher/" "FLiNGTrainer/" "FiraxisLive/" "Factorio/" "Everything/" "EQATEC Analytics/" "EMPRESS/" "emp.bin" "Embarcadero/" "Electron/" "EldenRing/" "EasyAntiCheat/" "Durgod Zeus Engine/" "DingTalk/" "dinglive/" "Daum/" "DarkSoulsIII/" "cursed_blacksmith/" "CoreAVC.ini" "com.webqwe/" "com.mutangtech.qianji.win/" "com.adobe.dunamis/" "Codota/" "Code/" "clash_win/" "byteexec/" "Brotato/" "Blender Foundation/" "bilibili/" "BetopGame/" "BaiduYunKernel/" "BaiduYunGuanjia/" "baidu/" "Autodesk Installer/" "Autodesk/" "Altium2004/" "Altium/" "Adobe/" "ADBDriverInstaller/" "3dm_game_files/" "360zip/" "360AblumUI/" "1.emacs.d/" ".spacemacs.env" ".spacemacs" ".minecraft/" ".hmcl/" ".emacs.d/" ".1911/" "../" "./")
+
  ("/home/Luna/.emacs.d/" (26108 19769 841872 295000) "custom.el" "elpa/" "recentf" "org-persist/" "lisp/" "init.el" "ido.last" "LICENSE" ".git/" "../" "./")
 
  ("/home/Luna/" (26108 19730 24588 753000) ".emacs.d/" ".gitconfig" ".gtkrc-2.0" ".zcompdump.zwc" ".zcompdump.dat" ".zcompdump" ".zhistory" ".ut_storage/" "emacsfile/" "Downloads/" ".viminfo" "desktop/" "downloads/" ".factorio/" "steam/" ".pulse-cookie" ".steampid" ".steampath" ".steam/" ".ssh/" ".git-credentials" ".TabNine/" ".fonts/" ".fonts.conf" ".zcompcache/" ".zshrc" "code/" ".p10k.zsh" ".zimrc" ".zim/" ".zsh_profile" ".pki/" ".bashrc" ".bash_history" ".cache/" ".config/" ".local/" ".bash_profile" ".bash_logout" "../" "./")
-
- ("c:/Users/Amireux/AppData/Roaming/.emacs.d/lisp/" (26108 16106 0 0) "user-keymap.el" "load-plugins.el" "init-utils.el" "init-ui.el" "init-elpa.el" "init-const.el" "../" "./")
-
- ("c:/Users/Amireux/AppData/Roaming/.emacs.d/" (26108 16124 0 0) "recentf" "org-persist/" "lisp/" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "custom.el~" "custom.el" "auto-save-list/" ".init.el.~undo-tree~" ".git/" "../" "./")
 
  ("c:/Users/Amireux/AppData/Roaming/.emacs.d/elpa/" (26108 14455 0 0) "undo-tree-0.8.2/" "smart-mode-line-20211005.233/" "rich-minority-20190419.1136/" "restart-emacs-20201127.1425/" "queue-0.2/" "gruvbox-theme-20230921.120/" "dashboard-20240319.915/" "dash-20240103.1301/" "benchmark-init-20240320.1342/" "autothemer-20230414.1419/" "archives/" "../" "./")
 
  ("d:/30_emacs.editor/projects/" (26108 14697 0 0) "main2.c~" "main2.c" "main.exe" "main.c~" "main.cpp" "main.c" "fsdalkjflsa.cc" "exec.exe" "EmacsMini.cpp~" "EmacsMini.cpp" "clang-main.exe" "a.exe" "#main2.c#" "#main.cpp#" "#main.c#" "#fsdalkjflsa.cc#" "../" "./")
 
  ("d:/1_tools.file.works/9_CMD.Coding/docments/" (26106 59970 0 0) "答辩.org~" "答辩.org" "Linux.org" "#main.org#" "../" "./")
-
- ("c:/Users/Amireux/AppData/Roaming/" (26106 57996 0 0) "迅雷影音/" "幕布/" "{418C0070-7838-48BE-AF0A-485A052BBE44}" "xmp/" "XMind/" "Wmpvp/" "WeMod/" "VisualAssist/" "Visual Studio Setup/" "Valve Corporation/" "utForpc/" "Ubisoft/" "Typora/" "TPDownloadProxy/" "todo-list/" "thunder/" "Theta/" "The Creative Assembly/" "TenioDL/" "Tencent/" "TabNine/" "T2GP Launcher/" "Sun/" "Subversion/" "Skype/" "Siemens/" "Sekiro/" "Sega/" "RenPy/" "RapidCRC/" "quark-cloud-drive/" "QQ/" "QMLogEx/" "PLogs/" "pip/" "perfectworldarena/" "PCL/" "paradox-launcher-v2/" "Paradox Interactive/" "OpenMV/" "obsidian/" "NXP Semiconductors/" "NuGet/" "Netease/" "Mubu/" "MobaXterm/" "Microsoft/" "MathWorks/" "lunarvim/" "LeiGod/" "Lantern/" "KuGou8/" "kingsoft/" "JetBrains/" "Goldberg SteamEmu Saves/" "Godot/" "gnupg/" "GIMP/" "Geek Uninstaller/" "Foxit Software/" "Foxit AgentInformation/" "FnInformation/" "FLT/" "FlowLauncher/" "FLiNGTrainer/" "FiraxisLive/" "Factorio/" "Everything/" "EQATEC Analytics/" "EMPRESS/" "emp.bin" "Embarcadero/" "Electron/" "EldenRing/" "EasyAntiCheat/" "Durgod Zeus Engine/" "DingTalk/" "dinglive/" "Daum/" "DarkSoulsIII/" "cursed_blacksmith/" "CoreAVC.ini" "com.webqwe/" "com.mutangtech.qianji.win/" "com.adobe.dunamis/" "Codota/" "Code/" "clash_win/" "byteexec/" "Brotato/" "Blender Foundation/" "bilibili/" "BetopGame/" "BaiduYunKernel/" "BaiduYunGuanjia/" "baidu/" "Autodesk Installer/" "Autodesk/" "Altium2004/" "Altium/" "Adobe/" "ADBDriverInstaller/" "3dm_game_files/" "360zip/" "360AblumUI/" ".spacemacs.env" ".spacemacs" ".minecraft/" ".hmcl/" ".emacs.d/" ".1911/" "../" "./")
 
  ("d:/1_tools.file.works/9_CMD.Coding/" (26106 58059 0 0) "main.s" "main.i" "main.c~" "main.cc" "main.c" "exec.exe" "docments/" "#main.org#" "../" "./")
 

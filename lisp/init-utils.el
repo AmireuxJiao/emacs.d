@@ -14,8 +14,5 @@
   (interactive)
   (previous-line 10))
 
-
-
-
 (provide 'init-utils)
 ;; init-utils.el ends here

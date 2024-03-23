@@ -10,9 +10,10 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (setq dafault-buffer-file-coding-system 'utf-8)
+(setq-default cursor-type '(bar . 3))
+
 ;; 设置垃圾回收阈值
 (setq gc-cons-threshold most-positive-fixnum)
-
 ;; 基础设置
 (ido-mode 1)
 (defconst *spell-check-support-enable* t)

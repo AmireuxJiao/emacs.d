@@ -1,8 +1,7 @@
 ;;; load-plugins.el --- Load plugins -*- lexical-binding: t -*-
-;;; Comments:
+;;; Commentary:
 
 ;;; Code:
-
 (setq use-package-always-defer t
       use-package-always-demand nil
       use-package-expand-minimally t
@@ -30,7 +29,19 @@
 ;; 删除当前行
 (use-package crux
   :ensure t
-  :bind ("C-c k" . crux-smart-kill-line))
+  :bind (("C-c k" . crux-smart-kill-line)
+	 ("C-c ^" . crux-top-join-line)))
+	 
+	 
+(use-package amx
+  :ensure t
+  :init (amx-mode))
+
+;; move cursor
+(use-package mwim
+  :ensure t
+  :bind (("C-a" . mwim-beginning-of-code-or-line)
+	 ("C-e" . mwim-end-of-code-or-line)))
 
 ;; 删除前、后的第一个非空字符
 (use-package hungry-delete
@@ -46,6 +57,75 @@
   :ensure t
   :bind (("M-C-p" . drag-stuff-up)
 	 ("M-C-n" . drag-stuff-down)))
+
+(use-package ivy
+  :ensure t
+  :defer 1
+  :demand
+  :hook (after-init . ivy-mode)
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffer t
+	search-default-mode #'char-fold-to-regexp
+	ivy-count-format "(%d/%d) "
+	ivy-initial-inputs-alist nil)
+  :bind
+  (("C-s" . 'swiper)
+   ("C-x b" . 'ivy-switch-buffer)
+   ("C-c v" . 'ivy-push-view)
+   ("C-c s" . 'ivy-switch-view)
+   ("C-c V" . 'ivy-pop-view)
+   ("C-x C-SPC" . 'counsel-mark-ring)
+   ;; :when ((*is-mac*)
+   ;; 	  ("C-x C-@" . 'counsel-mark-ring))
+   ))
+  
+
+(use-package counsel
+  :ensure t
+  :after (ivy)
+  :bind (("M-x" . 'counsel-M-x)
+	 ("C-x C-f" . 'counsel-find-file)
+	 ("C-c f" . 'counsel-recentf)
+	 ("C-c g" . 'counsel-git)))
+
+(use-package swiper
+  :ensure t
+  :after (ivy)
+  :bind (
+	 ("C-r" . swiper-isearch-backward))
+  :config (setq swiper-action-recenter t
+		swiper-include-line-number-in-search t))
+
+(use-package company
+  :ensure t
+  :config
+  (setq company-dabbrev-code-everywhere t ;; 在任何地方都补全
+	company-dabbrev-code-modes t
+	company-dabbrev-code-other-buffers 'all
+	company-dabbrev-downcase nil
+	company-dabbrev-ignore-case t
+	company-dabbrev-other-buffers 'all
+	company-require-match nil
+	company-minimum-prefix-length 2 ;; 最小补全的字母个数是2
+	company-show-numbers t
+	company-tooltip-limit 20
+	company-idle-delay 0
+	company-echo-delay 0
+	company-tooltip-offset-display 'scrollbar
+	company-begin-commands '(self-insert-command))
+  (push '(company-semantic :with company-yasnippet) company-backends)
+  :hook ((after-init . global-company-mode)))
+
+(use-package undo-tree
+  :ensure t
+  )
+
+(use-package flycheck
+  :ensure t
+  :hook (after-init . global-flycheck-mode))
+;;:hook (prog-mode . flycheck-mode)
+
 
 (defun plugins-hello-world ()
   (interactive)

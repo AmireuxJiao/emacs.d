@@ -2,10 +2,8 @@
 
 ;;; Commentary:
 
-
 ;; This file bootstraps the configuration, which is divided into
 ;; a number of other files
-
 
 ;;; Code:
 (add-to-list 'load-path
@@ -31,5 +29,3 @@
 
 (provide 'init)  
 ;;; init.el ends here
-
-
