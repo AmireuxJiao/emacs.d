@@ -117,9 +117,14 @@
   (push '(company-semantic :with company-yasnippet) company-backends)
   :hook ((after-init . global-company-mode)))
 
+(use-package which-key
+  :ensure t
+  :init (which-key-mode))
+
 (use-package undo-tree
   :ensure t
-  )
+  :init (global-undo-tree-mode)
+  :custom (undo-tree-auto-save-history nil))
 
 (use-package flycheck
   :ensure t
