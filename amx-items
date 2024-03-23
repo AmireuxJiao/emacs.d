@@ -1,0 +1,17 @@
+
+;; ----- amx-history -----
+(
+ eval-buffer
+ comment-or-uncomment-region
+ cd
+ 5x5
+ amx
+ arp
+ dbx
+)
+
+;; ----- amx-data -----
+(
+ (comment-or-uncomment-region . 1)
+ (eval-buffer . 1)
+)
