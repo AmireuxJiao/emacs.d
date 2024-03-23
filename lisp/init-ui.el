@@ -11,7 +11,7 @@
 (set-keyboard-coding-system 'utf-8)
 (setq dafault-buffer-file-coding-system 'utf-8)
 (setq-default cursor-type '(bar . 3))
-
+(pixel-scroll-precision-mode t)
 ;; 设置垃圾回收阈值
 (setq gc-cons-threshold most-positive-fixnum)
 ;; 基础设置

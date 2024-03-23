@@ -1,17 +1,21 @@
 
 ;; ----- amx-history -----
 (
+ package-list-packages
+ list-packages
+ load-theme
  eval-buffer
+ restart-emacs
  comment-or-uncomment-region
  cd
- 5x5
- amx
- arp
- dbx
 )
 
 ;; ----- amx-data -----
 (
  (comment-or-uncomment-region . 1)
- (eval-buffer . 1)
+ (eval-buffer . 4)
+ (load-theme . 21)
+ (restart-emacs . 1)
+ (list-packages . 2)
+ (package-list-packages . 1)
 )

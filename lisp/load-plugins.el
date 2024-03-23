@@ -14,6 +14,10 @@
   :ensure t
   :init (load-theme 'gruvbox-dark-soft t))
 
+(use-package zenburn-theme
+  :ensure t)
+;; (use-package)
+
 (use-package smart-mode-line
   :ensure t
   :init (setq sml/no-confirm-load-theme t
@@ -31,7 +35,6 @@
   :ensure t
   :bind (("C-c k" . crux-smart-kill-line)
 	 ("C-c ^" . crux-top-join-line)))
-	 
 	 
 (use-package amx
   :ensure t
@@ -117,6 +120,11 @@
   (push '(company-semantic :with company-yasnippet) company-backends)
   :hook ((after-init . global-company-mode)))
 
+(use-package company-box
+  :ensure t
+  :if window-system
+  :hook (company-mode . company-box-mode))
+
 (use-package which-key
   :ensure t
   :init (which-key-mode))
@@ -130,6 +138,10 @@
   :ensure t
   :hook (after-init . global-flycheck-mode))
 ;;:hook (prog-mode . flycheck-mode)
+
+(use-package ace-window
+  :ensure t
+  :bind ("C-x o" . 'ace-window))
 
 
 (defun plugins-hello-world ()
