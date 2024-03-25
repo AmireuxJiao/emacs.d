@@ -1,7 +1,6 @@
 ;;; init-ui.el --- Set up basic ui and functionality for Emacs -*- lexical-binding: t -*-
 ;;; Commentary:
 
-
 ;;; Code:
 ;; (set-frame-font "Mononoki Nerd Font Mono 10" nil t)
 ;; 设置文件编码
@@ -10,6 +9,7 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (setq dafault-buffer-file-coding-system 'utf-8)
+;; 设置光标
 (setq-default cursor-type '(bar . 3))
 (pixel-scroll-precision-mode t)
 ;; 设置垃圾回收阈值
@@ -41,10 +41,15 @@
 	(set-face-attribute 'default nil :font "Mononoki Nerd Font Mono 10") ;; 代码字体
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	  (set-fontset-font (frame-parameter nil 'font)
-			    charset (font-spec :family "Maple Mono SC NF" :size 12)))) ;; 中文字体
-    (set-face-attribute 'default nil :font "Mononoki Nerd Font Mono 12")) ;; 非windows中的字体
+			    charset (font-spec :family "Maple Mono SC NF" :size 12))))) ;; 中文字体
+    ;; (set-face-attribute 'default nil :font "Mononoki Nerd Font Mono 12")) ;; 非windows中的字体
   ;;:unless *is-windows*
-  
+  (if *is-linux*
+      (progn
+	(set-face-attribute 'default nil :font "Mononoki Nerd Font Mono 10") ;; 代码字体
+	(dolist (charset '(kana han symbol cjk-misc bopomofo))
+	  (set-fontset-font (frame-parameter nil 'font)
+			    charset (font-spec :family "Maple Mono SC NF" :size 12))))) ;; 中文字体
   :config
   (global-display-line-numbers-mode 1)         ; 在 Window 显示行号
   (setq display-line-numbers-type 'relative)
