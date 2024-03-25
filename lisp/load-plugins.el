@@ -1,3 +1,4 @@
+
 ;;; load-plugins.el --- Load plugins -*- lexical-binding: t -*-
 ;;; Commentary:
 
@@ -11,11 +12,12 @@
   :ensure t)
 
 (use-package gruvbox-theme
-  :ensure t
-  :init (load-theme 'gruvbox-dark-soft t))
+  :ensure t)
+  ;;:init (load-theme 'gruvbox-dark-soft t))
 
 (use-package zenburn-theme
-  :ensure t)
+  :ensure t
+  :init (load-theme 'zenburn t))
 ;; (use-package)
 
 (use-package smart-mode-line
@@ -82,6 +84,11 @@
    ;; :when ((*is-mac*)
    ;; 	  ("C-x C-@" . 'counsel-mark-ring))
    ))
+
+;; TODO configuration avy plugins
+(use-package avy
+  :ensure t
+  )
   
 
 (use-package counsel
@@ -137,14 +144,16 @@
 (use-package flycheck
   :ensure t
   :hook (after-init . global-flycheck-mode))
-;;:hook (prog-mode . flycheck-mode)
+;;:hook (prog-mode . flycheck-mode) ;; 只在编程模式中使用
 
 (use-package ace-window
   :ensure t
   :bind ("C-x o" . 'ace-window))
 
 
+
 (defun plugins-hello-world ()
+  "Check load-plugins.el is useful."
   (interactive)
   (message "plugins hello world"))
 
