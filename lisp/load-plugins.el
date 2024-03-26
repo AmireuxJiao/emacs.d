@@ -37,7 +37,7 @@
   :ensure t
   :bind (("C-c k" . crux-smart-kill-line)
 	 ("C-c ^" . crux-top-join-line)))
-	 
+
 (use-package amx
   :ensure t
   :init (amx-mode))
@@ -89,7 +89,7 @@
 (use-package avy
   :ensure t
   )
-  
+
 
 (use-package counsel
   :ensure t
@@ -150,7 +150,15 @@
   :ensure t
   :bind ("C-x o" . 'ace-window))
 
+;; (use-package pulsar
+;;   :ensure t)
 
+(use-package beacon
+  :ensure t
+  :init (beacon-mode 1)
+  :config (setq beacon-size 70
+		beacon-color "#9BCD9B"
+		beacon-blink-delay 0.5))
 
 (defun plugins-hello-world ()
   "Check load-plugins.el is useful."
@@ -159,4 +167,3 @@
 
 (provide 'load-plugins)
 ;;; load-plugins.el ends here
-  
