@@ -49,7 +49,7 @@
 	(set-face-attribute 'default nil :font "Mononoki Nerd Font Mono 10") ;; 代码字体
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	  (set-fontset-font (frame-parameter nil 'font)
-			    charset (font-spec :family "Maple Mono SC NF" :size 12))))) ;; 中文字体
+			    charset (font-spec :family "Maple Mono SC NF" :size 14))))) ;; 中文字体
   (global-display-line-numbers-mode 1)         ; 在 Window 显示行号
   (setq display-line-numbers-type 'relative)
   )
