@@ -10,6 +10,16 @@
 (use-package restart-emacs
   :ensure t)
 
+(use-package dashboard
+  :ensure t
+  :init (dashboard-open)
+  :config
+  (setq dashboard-banner-logo-title "Wolcome to Emacs Luna!")
+  (setq dashboard-startup-banner 'official)
+  (setq dashboard-items '((recents . 5)
+			  (bookmarks . 5)
+			  (projects . 10))))
+
 (use-package gruvbox-theme
   :ensure t
   :init (load-theme 'gruvbox-dark-medium t))
@@ -52,9 +62,6 @@
   :bind
   (("C-c DEL" . hungry-delete-backward))
   (("C-c d" . hungry-delete-forward)))
-
-(use-package dashboard
-  :ensure t)
 
 (use-package drag-stuff
   :ensure t
@@ -154,7 +161,7 @@
 (use-package flycheck
   :ensure t
   :hook (after-init . global-flycheck-mode))
-;;:hook (prog-mode . flycheck-mode) ;; 只在编程模式中使用
+;; :hook (prog-mode . flycheck-mode) ;; 只在编程模式中使用
 
 (use-package ace-window
   :ensure t
@@ -169,15 +176,6 @@
   :config (setq beacon-size 70
 		beacon-color "#9BCD9B"
 		beacon-blink-delay 0.5))
-
-
-
-
-
-
-
-
-
 
 (defun plugins-hello-world ()
   "Check load-plugins.el is useful."
