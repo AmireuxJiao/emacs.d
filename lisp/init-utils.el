@@ -14,6 +14,20 @@
   (interactive)
   (previous-line 10))
 
+(defun avy-action-embark (pt)
+  (unwind-protect
+      (save-excursion
+	(goto-char pt)
+	(embark-act))
+    (select-window
+     (cdr (ring-ref avy-ring 0)))) t)
+
+(defun avy-action-kill-whole-line (pt)
+  (save-excursion
+    (goto-char pt)
+    (kill-whole-line))
+  (select-window
+   (cdr (ring-ref avy-ring 0))) t)
 
 ;; (defun pulse-line (&rest _)
 ;;   "pulse the current line."

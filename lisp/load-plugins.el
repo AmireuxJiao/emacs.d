@@ -1,4 +1,3 @@
-
 ;;; load-plugins.el --- Load plugins -*- lexical-binding: t -*-
 ;;; Commentary:
 
@@ -12,13 +11,12 @@
   :ensure t)
 
 (use-package gruvbox-theme
-  :ensure t)
-  ;;:init (load-theme 'gruvbox-dark-soft t))
+  :ensure t
+  :init (load-theme 'gruvbox-dark-medium t))
 
 (use-package zenburn-theme
-  :ensure t
-  :init (load-theme 'zenburn t))
-;; (use-package)
+  :ensure t)
+  ;;:init (load-theme 'zenburn t))
 
 (use-package smart-mode-line
   :ensure t
@@ -85,11 +83,24 @@
    ;; 	  ("C-x C-@" . 'counsel-mark-ring))
    ))
 
+(use-package embark
+  :ensure t
+  :init (setq prefix-help-command #'embark-prefix-help-command)
+  :config (add-to-list 'display-buffer-alist
+		       '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*" nil
+			 (window-parameters (mode-line-format . none))))
+  :bind (("C-." . embark-bact)
+	 ("C-;" . embark-dwim)
+	 ("C-h B" . embark-bindings)))
+
 ;; TODO configuration avy plugins
 (use-package avy
   :ensure t
-  )
-
+  :config (setf (alist-get ?k avy-dispatch-alist) 'avy-action-kill-stay
+		(alist-get ?K avy-dispatch-alist) 'avy-action-kill-whole-line
+		(alist-get ?e avy-dispatch-alist) 'avy-action-embark)
+  :bind (("M-j" . avy-goto-char-timer)
+	 ("M-g" . avy-goto-line)))
 
 (use-package counsel
   :ensure t
@@ -102,8 +113,7 @@
 (use-package swiper
   :ensure t
   :after (ivy)
-  :bind (
-	 ("C-r" . swiper-isearch-backward))
+  :bind (("C-r" . swiper-isearch-backward))
   :config (setq swiper-action-recenter t
 		swiper-include-line-number-in-search t))
 
@@ -159,6 +169,15 @@
   :config (setq beacon-size 70
 		beacon-color "#9BCD9B"
 		beacon-blink-delay 0.5))
+
+
+
+
+
+
+
+
+
 
 (defun plugins-hello-world ()
   "Check load-plugins.el is useful."

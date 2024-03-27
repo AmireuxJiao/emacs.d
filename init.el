@@ -21,9 +21,6 @@
 (require 'load-plugins)
 (require 'init-ui)
 
-
-(print *is-windows*)
-
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
