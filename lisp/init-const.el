@@ -1,6 +1,6 @@
 ;;; init-const.el --- This file defines constants -*- lexical-binding: t —*-
 ;;; Commentart
-n
+
 ;;; Code
 (defconst *is-mac* (eq system-type 'darwin)
   "判断是否是mac")

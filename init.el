@@ -13,7 +13,6 @@
       (expand-file-name "custom.el" user-emacs-directory))
 
 ;;; require module
-
 (require 'init-elpa)
 (require 'init-const)
 (require 'init-utils)
@@ -24,5 +23,5 @@
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
-(provide 'init)  
+(provide 'init)
 ;;; init.el ends here

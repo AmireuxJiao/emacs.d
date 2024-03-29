@@ -38,7 +38,7 @@
 (use-package benchmark-init
   :ensure t
   :init (benchmark-init/activate)
-  :hook (after-init . benchmark-init/deactivate))
+   :hook (after-init . benchmark-init/deactivate))
 
 ;; 删除当前行
 (use-package crux
@@ -103,11 +103,13 @@
 ;; TODO configuration avy plugins
 (use-package avy
   :ensure t
-  :config (setf (alist-get ?k avy-dispatch-alist) 'avy-action-kill-stay
+  :config
+  (setf (alist-get ?k avy-dispatch-alist) 'avy-action-kill-stay
 		(alist-get ?K avy-dispatch-alist) 'avy-action-kill-whole-line
 		(alist-get ?e avy-dispatch-alist) 'avy-action-embark)
+  (setq avy-keys '(?a ?s ?d ?f ?g ?h ?u ?j ?l))
   :bind (("M-j" . avy-goto-char-timer)
-	 ("M-g" . avy-goto-line)))
+	 ("C-j a g" . avy-goto-line)))
 
 (use-package counsel
   :ensure t
@@ -120,7 +122,7 @@
 (use-package swiper
   :ensure t
   :after (ivy)
-  :bind (("C-r" . swiper-isearch-backward))
+  :bind ;;(("C-r" . swiper-isearch-backward))
   :config (setq swiper-action-recenter t
 		swiper-include-line-number-in-search t))
 
@@ -160,6 +162,7 @@
 
 (use-package flycheck
   :ensure t
+  :config (setq flycheck-emacs-lisp-load-path 'inherit)
   :hook (after-init . global-flycheck-mode))
 ;; :hook (prog-mode . flycheck-mode) ;; 只在编程模式中使用
 
