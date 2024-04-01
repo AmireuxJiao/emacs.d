@@ -80,8 +80,7 @@
 	ivy-count-format "(%d/%d) "
 	ivy-initial-inputs-alist nil)
   :bind
-  (("C-s" . 'swiper)
-   ("C-x b" . 'ivy-switch-buffer)
+  (("C-x b" . 'ivy-switch-buffer)
    ("C-c v" . 'ivy-push-view)
    ("C-c s" . 'ivy-switch-view)
    ("C-c V" . 'ivy-pop-view)
@@ -89,6 +88,20 @@
    ;; :when ((*is-mac*)
    ;; 	  ("C-x C-@" . 'counsel-mark-ring))
    ))
+
+(use-package ivy-posframe
+  :ensure t
+  :delight
+  :init
+  (setq ivy-posframe-display-functions-alist
+	'((swiper . ivy-posframe-display-at-frame-center)
+	  (complete-symbol . ivy-posframe-display-at-point)
+	  (counsel-M-x . ivy-posframe-display-at-frame-center)
+	  (counsel-find-file . ivy-posframe-display-at-frame-center)
+	  (ivy-switch-buffer . ivy-posframe-display-at-frame-center)
+	  (t . ivy-posframe-display-at-frame-center)))
+  )
+  
 
 (use-package embark
   :ensure t
@@ -122,7 +135,8 @@
 (use-package swiper
   :ensure t
   :after (ivy)
-  :bind ;;(("C-r" . swiper-isearch-backward))
+  :bind (("C-s" . 'swiper)
+	 ("C-r" . swiper-isearch-backward))
   :config (setq swiper-action-recenter t
 		swiper-include-line-number-in-search t))
 

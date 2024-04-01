@@ -1,3 +1,4 @@
+
 ;;; init.el --- load the full configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
@@ -13,6 +14,7 @@
       (expand-file-name "custom.el" user-emacs-directory))
 
 ;;; require module
+
 (require 'init-elpa)
 (require 'init-const)
 (require 'init-utils)
