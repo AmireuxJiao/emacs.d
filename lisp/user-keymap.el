@@ -11,8 +11,13 @@
 (global-set-key (kbd "C-c '") 'comment-or-uncomment-region)
 (global-set-key (kbd "M-n") 'next-ten-lines)
 (global-set-key (kbd "M-p") 'previous-ten-lines)
+(global-set-key (kbd "C-}") 'enlarge-three-windows-horizontally)
+(global-set-key (kbd "C-{") 'shrink-three-windows-horizontally)
+
 (global-set-key (kbd "C-j") nil)
 (global-set-key (kbd "M-g M-g") nil)
+
+
 
 (use-package emacs
   :config (defalias 'yes-or-no-p 'y-or-n-p))
@@ -23,5 +28,3 @@
 
 (provide 'user-keymap)
 ;;; user-keymap.el ends here
-
-

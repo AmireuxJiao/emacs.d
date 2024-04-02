@@ -1,9 +1,7 @@
 ;;; init-utils.el --- Elisp helper functions and commands -*- lexical-binding: t -*-
-;;; Commentary;:
+;;; Commentary:
 
-;;; Code
-
-;; Faster move cursor
+;;; Code:
 (defun next-ten-lines()
   "Move cursor to next 10 lines."
   (interactive)
@@ -13,6 +11,16 @@
   "Move cursor to previous 10 lines."
   (interactive)
   (previous-line 10))
+
+(defun enlarge-three-windows-horizontally()
+  "Set windows is 3 \"enlarge-window-horizontally\"."
+  (interactive)
+  (enlarge-window-horizontally 3))
+
+(defun shrink-three-windows-horizontally()
+  "Set windows is 3 \"shrink-window-horizontally\"."
+  (interactive)
+  (shrink-window-horizontally 3))
 
 (defun avy-action-embark (pt)
   (unwind-protect
