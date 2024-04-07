@@ -50,8 +50,24 @@
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	  (set-fontset-font (frame-parameter nil 'font)
 			    charset (font-spec :family "Maple Mono SC NF" :size 14))))) ;; 中文字体
+  (if (not (eq window-system nil))
+      (progn
+	;; top, left ... must be integer
+	(add-to-list 'default-frame-alist
+		     (cons 'top (/ (x-display-pixel-height) 10)))
+	(add-to-list 'default-frame-alist
+		     (cons 'left (/ (x-display-pixel-width) 10)))
+	(add-to-list 'default-frame-alist
+		     (cons 'height (/ (* 4 (x-display-pixel-height))
+				      (* 5 (frame-char-height)))))
+	(add-to-list 'default-frame-alist
+		     (cons 'width (/ (* 4 (x-display-pixel-height))
+				      (* 5 (frame-char-width)))))))
+
   (global-display-line-numbers-mode 1)         ; 在 Window 显示行号
   (setq display-line-numbers-type 'relative)
+
+  
   )
 
 (provide 'init-ui)
