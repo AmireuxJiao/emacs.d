@@ -184,15 +184,26 @@
   :ensure t
   :bind ("C-x o" . 'ace-window))
 
-;; (use-package pulsar
-;;   :ensure t)
-
 (use-package beacon
   :ensure t
   :init (beacon-mode 1)
   :config (setq beacon-size 70
 		beacon-color "#9BCD9B"
 		beacon-blink-delay 0.5))
+
+
+(use-package lsp-mode
+  :ensure t
+  :hook ((lsp-mode . lsp-enable-which-key-integration)
+	 (python-mode . lsp-deferred)
+	 (c-mode . lsp-deferred)
+	 (javascript-mode . lsp-deferred))
+  :commands (lsp lsp-deferred)
+
+  )
+
+
+
 
 (defun plugins-hello-world ()
   "Check load-plugins.el is useful."
