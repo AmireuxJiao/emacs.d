@@ -140,30 +140,80 @@
   :config (setq swiper-action-recenter t
 		swiper-include-line-number-in-search t))
 
+
+
+;; (use-package company
+;;   :ensure t
+;;   :config
+;;   (setq company-dabbrev-code-everywhere t ;; 在任何地方都补全
+;; 	company-dabbrev-code-modes t
+;; 	company-dabbrev-code-other-buffers 'all
+;; 	company-dabbrev-downcase nil
+;; 	company-dabbrev-ignore-case t
+;; 	company-dabbrev-other-buffers 'all
+;; 	company-require-match nil
+;; 	company-minimum-prefix-length 2 ;; 最小补全的字母个数是2
+;; 	company-show-numbers t
+;; 	company-tooltip-limit 20
+;; 	company-idle-delay 0
+;; 	company-echo-delay 0
+;; 	company-tooltip-offset-display 'scrollbar
+;; 	company-begin-commands '(self-insert-command))
+;;   ;;(push '(company-semantic :with company-yasnippet) company-backends)
+;;   :hook ((after-init . global-company-mode)))
+
+(use-package yasnippet
+  :ensure t
+  :init (yas-global-mode 1)
+  :hook
+  (prog-mode . yas-minor-mode)
+  :config
+  (yas-reload-all)
+  ;; add company-yasnippet to company-backends
+  ;; (defun company-mode/backend-with-yas (backend)
+  ;;   (if (and (listp backend) (member 'company-yasnippet backend))
+  ;; 	backend
+  ;;     (append (if (consp backend) backend (list backend))
+  ;;             '(:with company-yasnippet))))
+  ;; (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
+  ;; unbind <TAB> completion
+  (define-key yas-minor-mode-map [(tab)]        nil)
+  (define-key yas-minor-mode-map (kbd "TAB")    nil)
+  (define-key yas-minor-mode-map (kbd "<tab>")  nil)
+  :bind
+  (:map yas-minor-mode-map ("S-<tab>" . yas-expand)))
+
+(use-package yasnippet-snippets
+  :ensure t
+  :after yasnippet)
+
 (use-package company
   :ensure t
+  :init (global-company-mode)
   :config
-  (setq company-dabbrev-code-everywhere t ;; 在任何地方都补全
-	company-dabbrev-code-modes t
-	company-dabbrev-code-other-buffers 'all
-	company-dabbrev-downcase nil
-	company-dabbrev-ignore-case t
-	company-dabbrev-other-buffers 'all
-	company-require-match nil
-	company-minimum-prefix-length 2 ;; 最小补全的字母个数是2
-	company-show-numbers t
-	company-tooltip-limit 20
-	company-idle-delay 0
-	company-echo-delay 0
-	company-tooltip-offset-display 'scrollbar
-	company-begin-commands '(self-insert-command))
-  (push '(company-semantic :with company-yasnippet) company-backends)
-  :hook ((after-init . global-company-mode)))
+  (setq company-minimum-prefix-length 1)
+  (setq company-tooltip-align-annotations t)
+  (setq company-idle-delay 0.0)
+  (setq company-show-numbers t)
+  (setq company-selection-wrap-around t)
+  (setq company-transformers '(company-sort-by-occurrence))
+  (defvar company-mode/enable-yas t
+    "Enable yasnippet for all backends.")
+  
+  (defun company-mode/backend-with-yas (backend)
+    (if (or (not company-mode/enable-yas) (and (listp backend)
+					       (member 'company-yasnippet backend)))
+	backend (append (if (consp backend) backend (list backend))
+			'(:with company-yasnippet))))
+  (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends)))
 
 (use-package company-box
   :ensure t
   :if window-system
   :hook (company-mode . company-box-mode))
+
+
+
 
 (use-package which-key
   :ensure t
@@ -185,12 +235,11 @@
   :bind ("C-x o" . 'ace-window))
 
 (use-package beacon
-  :ensure t
-  :init (beacon-mode 1)
+  :ensure f
+  ;;:init (if (*is_win))(beacon-mode 1)
   :config (setq beacon-size 70
 		beacon-color "#9BCD9B"
 		beacon-blink-delay 0.5))
-
 
 (use-package lsp-mode
   :ensure t
