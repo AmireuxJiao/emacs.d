@@ -150,7 +150,10 @@
   
   (define-key yas-minor-mode-map [(tab)]        nil)
   (define-key yas-minor-mode-map (kbd "TAB")    nil)
-  (define-key yas-minor-mode-map (kbd "<tab>")  nil))
+  (define-key yas-minor-mode-map (kbd "<tab>")  nil)
+  :bind
+  (("M-/" . 'company-yasnippet)))
+
 
 (use-package yasnippet-snippets
   :ensure t
