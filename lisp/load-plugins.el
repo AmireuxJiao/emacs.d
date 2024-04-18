@@ -140,28 +140,6 @@
   :config (setq swiper-action-recenter t
 		swiper-include-line-number-in-search t))
 
-
-
-;; (use-package company
-;;   :ensure t
-;;   :config
-;;   (setq company-dabbrev-code-everywhere t ;; 在任何地方都补全
-;; 	company-dabbrev-code-modes t
-;; 	company-dabbrev-code-other-buffers 'all
-;; 	company-dabbrev-downcase nil
-;; 	company-dabbrev-ignore-case t
-;; 	company-dabbrev-other-buffers 'all
-;; 	company-require-match nil
-;; 	company-minimum-prefix-length 2 ;; 最小补全的字母个数是2
-;; 	company-show-numbers t
-;; 	company-tooltip-limit 20
-;; 	company-idle-delay 0
-;; 	company-echo-delay 0
-;; 	company-tooltip-offset-display 'scrollbar
-;; 	company-begin-commands '(self-insert-command))
-;;   ;;(push '(company-semantic :with company-yasnippet) company-backends)
-;;   :hook ((after-init . global-company-mode)))
-
 (use-package yasnippet
   :ensure t
   :init (yas-global-mode 1)
@@ -169,19 +147,10 @@
   (prog-mode . yas-minor-mode)
   :config
   (yas-reload-all)
-  ;; add company-yasnippet to company-backends
-  ;; (defun company-mode/backend-with-yas (backend)
-  ;;   (if (and (listp backend) (member 'company-yasnippet backend))
-  ;; 	backend
-  ;;     (append (if (consp backend) backend (list backend))
-  ;;             '(:with company-yasnippet))))
-  ;; (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
-  ;; unbind <TAB> completion
+  
   (define-key yas-minor-mode-map [(tab)]        nil)
   (define-key yas-minor-mode-map (kbd "TAB")    nil)
-  (define-key yas-minor-mode-map (kbd "<tab>")  nil)
-  :bind
-  (:map yas-minor-mode-map ("S-<tab>" . yas-expand)))
+  (define-key yas-minor-mode-map (kbd "<tab>")  nil))
 
 (use-package yasnippet-snippets
   :ensure t
@@ -241,15 +210,17 @@
 		beacon-color "#9BCD9B"
 		beacon-blink-delay 0.5))
 
+(use-package cmake-mode
+  :ensure t)
+
 (use-package lsp-mode
   :ensure t
   :hook ((lsp-mode . lsp-enable-which-key-integration)
 	 (python-mode . lsp-deferred)
+	 (cmake-ts-mode . lsp-deferred)
 	 (c-mode . lsp-deferred)
 	 (javascript-mode . lsp-deferred))
-  :commands (lsp lsp-deferred)
-
-  )
+  :commands (lsp lsp-deferred))
 
 
 
