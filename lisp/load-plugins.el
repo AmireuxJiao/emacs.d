@@ -140,6 +140,28 @@
   :config (setq swiper-action-recenter t
 		swiper-include-line-number-in-search t))
 
+<<<<<<< HEAD
+=======
+(use-package yasnippet
+  :ensure t
+  :init (yas-global-mode 1)
+  :hook
+  (prog-mode . yas-minor-mode)
+  :config
+  (yas-reload-all)
+  
+  (define-key yas-minor-mode-map [(tab)]        nil)
+  (define-key yas-minor-mode-map (kbd "TAB")    nil)
+  (define-key yas-minor-mode-map (kbd "<tab>")  nil)
+  :bind
+  (("M-/" . 'company-yasnippet)))
+
+
+(use-package yasnippet-snippets
+  :ensure t
+  :after yasnippet)
+
+>>>>>>> dd6af3b0f0d52f2d8ef82a3807756217b604edad
 (use-package company
   :ensure t
   :init (global-company-mode)
