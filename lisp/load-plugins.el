@@ -216,6 +216,12 @@
 	 (cmake-ts-mode . lsp-deferred)
 	 (c-mode . lsp-deferred)
 	 (javascript-mode . lsp-deferred))
+  :init
+  (add-hook 'lsp-completion-mode-hook (lambda ()
+					(when lsp-completion-mode
+					  (set (make-local-variable 'company-backends)
+					       (remq 'company-capf company-backends)))))
+				      
   :commands (lsp lsp-deferred))
 
 
