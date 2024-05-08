@@ -43,13 +43,13 @@
 	(set-face-attribute 'default nil :font "Mononoki Nerd Font Mono 10") ;; 代码字体
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	  (set-fontset-font (frame-parameter nil 'font)
-			    charset (font-spec :family "Maple Mono SC NF" :size 12))))) ;; 中文字体
+			    charset (font-spec :family "Sarasa Mono SC NF" :size 12))))) ;; 中文字体
   (if *is-linux*
       (progn
 	(set-face-attribute 'default nil :font "Mononoki Nerd Font Mono 10") ;; 代码字体
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	  (set-fontset-font (frame-parameter nil 'font)
-			    charset (font-spec :family "Maple Mono SC NF" :size 14))))) ;; 中文字体
+			    charset (font-spec :family "Sarasa Mono SC NF" :size 14))))) ;; 中文字体
   (if (not (eq window-system nil))
       (progn
 	;; top, left ... must be integer

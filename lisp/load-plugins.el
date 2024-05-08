@@ -26,7 +26,14 @@
 
 (use-package zenburn-theme
   :ensure t)
-  ;;:init (load-theme 'zenburn t))
+;;:init (load-theme 'zenburn t))
+
+(use-package hydra
+  :ensure t)
+
+(use-package use-package-hydra
+  :ensure t
+  :after hydra)
 
 (use-package smart-mode-line
   :ensure t
@@ -164,17 +171,26 @@
   (prog-mode . yas-minor-mode)
   :config
   (yas-reload-all)
+  (defun company-mode/backend-with-yas (backend)
+    (if (and (listp backend) (member 'company-yasnippet backend))
+	backend
+      (append (if (consp backend) backend (list backend))
+	      '(:with company-yasnippet))))
+  (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
   (define-key yas-minor-mode-map [(tab)]        nil)
   (define-key yas-minor-mode-map (kbd "TAB")    nil)
   (define-key yas-minor-mode-map (kbd "<tab>")  nil)
-  (defvar company-mode/enable-yas t
-    "Enable yasnippet for all backends.")
-  (defun company-mode/backend-with-yas (backend)
-    (if (or (not company-mode/enable-yas) (and (listp backend)
-					       (member 'company-yasnippet backend)))
-	backend (append (if (consp backend) backend (list backend))
-			'(:with company-yasnippet))))
-  (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends)))
+  :bind
+  (:map yas-minor-mode-map ("S-<tab>" . yas-expand))
+  ;; (defvar company-mode/enable-yas t
+  ;;   "Enable yasnippet for all backends.")
+  ;; (defun company-mode/backend-with-yas (backend)
+  ;;   (if (or (not company-mode/enable-yas) (and (listp backend)
+  ;; 					       (member 'company-yasnippet backend)))
+  ;; 	backend (append (if (consp backend) backend (list backend))
+  ;; 			'(:with company-yasnippet))))
+  ;; (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
+  )
 
 (use-package yasnippet-snippets
   :ensure t
@@ -187,7 +203,19 @@
 (use-package undo-tree
   :ensure t
   :init (global-undo-tree-mode)
-  :custom (undo-tree-auto-save-history nil))
+  :after hydra
+  :custom (undo-tree-auto-save-history nil)
+  ;; :bind ("C-x C-h u" . hydra-undo-tree/body)
+  ;; :hydra (hydra-undo-tree (:hint nil)
+  ;; "
+  ;; _p_: undo _n_: redo _s_: save _l_: load   "
+  ;; ("p"    undo-tree-undo)
+  ;; ("n"    undo-tree-redo)
+  ;; ("s"    undo-tree-save-history)
+  ;; ("u"    undo-tree-visualizer "visualize" :color blue)
+  ;; ("q"    nil "quit :color blue"))
+  ) 
+
 
 (use-package flycheck
   :ensure t
@@ -211,19 +239,34 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook ((lsp-mode . lsp-enable-which-key-integration)
-	 (python-mode . lsp-deferred)
-	 (cmake-ts-mode . lsp-deferred)
-	 (c-mode . lsp-deferred)
-	 (javascript-mode . lsp-deferred))
   :init
   (add-hook 'lsp-completion-mode-hook (lambda ()
 					(when lsp-completion-mode
 					  (set (make-local-variable 'company-backends)
 					       (remq 'company-capf company-backends)))))
-				      
-  :commands (lsp lsp-deferred))
+  (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-file-watch-threshold 500)
 
+  :hook ((lsp-mode . lsp-enable-which-key-integration)
+	 (python-mode . lsp-deferred)
+	 (cmake-ts-mode . lsp-deferred)
+	 (c-mode . lsp-deferred)
+	 (javascript-mode . lsp-deferred))
+  :commands (lsp lsp-deferred)
+  :config
+  (setq lsp-completion-provider :none)
+  (setq lsp-headerline-breadcrumb-enable t)
+  :bind
+  ("C-c l s" . lsp-ivy-workspace-symbol))
+
+(use-package lsp-ui
+  :ensure t
+  :after (lsp-mode)
+  :init (lsp-ui-mode t)
+  :config
+  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+  (setq lsp-ui-doc-position 'top))
 
 
 
